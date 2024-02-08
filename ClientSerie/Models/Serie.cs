@@ -46,6 +46,6 @@ namespace ClientSerie.Models
             Network = network;
         }
 
-        public Serie() : this(1, "", "", 0, 0, 0, "") { }
+        public Serie() : this(0, "", "", 0, 0, 0, "") { }
     }
 }
