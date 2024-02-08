@@ -30,5 +30,14 @@ namespace ClientSerie.Views
             this.InitializeComponent();
             this.DataContext = App.Current.Services.GetService<CreateSerieVM>();
         }
+
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            NavigationViewItem nav = args.SelectedItemContainer as NavigationViewItem;
+            if (nav.Content.ToString() == "Ajout")
+                Frame.Navigate(typeof(CreateSerieView));
+            else
+                Frame.Navigate(typeof(EditDeleteSerieView));
+        }
     }
 }
