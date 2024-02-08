@@ -60,5 +60,17 @@ namespace ClientSerie.Service
             var response = await Client.PostAsJsonAsync(nomControleur, serie);
             return response.IsSuccessStatusCode;
         }
+
+        public async Task<bool> DeleteSerieAsync(string nomControler, Serie serie)
+        {
+            var response = await Client.DeleteAsync(String.Concat(nomControler, "/", serie.Serieid));
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EditSerieAsync(string nomControler, int idToEdit, Serie serie)
+        {
+            var response = await Client.PutAsJsonAsync(String.Concat(nomControler, "/", idToEdit), serie);
+            return response.IsSuccessStatusCode;
+        }
     }
 }

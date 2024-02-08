@@ -41,6 +41,7 @@ namespace ClientSerie
 
             ServiceCollection services = new ServiceCollection();
             services.AddTransient<CreateSerieVM>();
+            services.AddTransient<EditDeleteSerieVM>();
             Services = services.BuildServiceProvider();
         }
 
@@ -56,7 +57,7 @@ namespace ClientSerie
             Frame rootFrame = new Frame();
             this.m_window.Content = rootFrame;
             m_window.Activate();
-            rootFrame.Navigate(typeof(CreateSerieView));
+            rootFrame.Navigate(typeof(EditDeleteSerieView));
 
             MainRoot = m_window.Content as FrameworkElement;
         }
